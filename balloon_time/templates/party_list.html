@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block content %}
+<h4 class="list">Current Parties:</h4>
+{% for party in parties %}
+<a href="/{{party.id}}">
+<h4 class="partytitle">{{ party.title }}</h4>
+</a>
+{{ party.description }}
+{% endfor %}
+<form action="post_party/" method="post">
+{% csrf_token %}
+{{ form.as_p }}
+<input type="submit" value="Submit" />
+</form>
+{% endblock %}
