@@ -4,9 +4,9 @@ from .models import Party, Clown
 class PartyForm(forms.ModelForm):
     class Meta:
         model = Party
-        fields = ('title', 'party_date', 'location')
+        fields = ('title', 'description', 'location')
 
 class ClownForm(forms.ModelForm):
     class Meta:
         model = Clown
-        fields = ('name')
+        fields = ('name', 'description')
